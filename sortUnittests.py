@@ -1,5 +1,6 @@
 import unittest
 
+
 def suiteFactory(
         *testcases,
         testSorter   = None,
@@ -35,10 +36,13 @@ def caseFactory(
     """
     get TestCase-y subclasses from frame "scope", filtering name and attribs
 
-    scope        = iterable to use for a frame; preferably a hashable (dictionary).
-    caseMatches  = regex to match function names against; blank matches every TestCase subclass
+    scope        = iterable to use for a frame; preferably a hashable
+                   (dictionary).
+    caseMatches  = regex to match function names against; blank matches every
+                   TestCase subclass
     caseSuperCls = superclass of test cases; unittest.TestCase by default
-    caseSorter   = sort test cases using this function over sorting by line number
+    caseSorter   = sort test cases using this function over sorting by line
+                   number
     """
 
     from re import match
@@ -53,9 +57,8 @@ def caseFactory(
     )
 
 
-"""if __name__ == '__main__':
+if __name__ == '__main__':
 
     cases = suiteFactory(*caseFactory())
     runner = unittest.TextTestRunner(verbosity=2)
     runner.run(cases)
-"""
